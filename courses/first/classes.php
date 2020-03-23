@@ -1,5 +1,7 @@
 <?php
 
+//file: classes.php
+
 $isAuthorized = true;
 $isAdmin = false;
 $classes = [
