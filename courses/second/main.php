@@ -1,14 +1,13 @@
 <?php
 
 function validate($str) {
-    $length = strlen($str);
-    $bracketStack = [];
+    $length = strlen($str); // Длина строки на входе функции
+    $bracketStack = []; // Стек для хранение скобок
     for ($i = 0; $i < $length; $i++)
          if ($str[$i] === '(' || $str[$i] === '<' || $str[$i] === '[') {
              $bracketStack[] = $str[$i];
-             //echo array_pop($bracketStack);
          } elseif ($str[$i] === ')' || $str[$i] === '>' || $str[$i] === ']') {
-             $lastElement = array_pop($bracketStack);
+             $lastElement = array_pop($bracketStack); // Удаление последнего элемента стека и его присваивание $lastElement
              if ($str[$i] === ')' && $lastElement !== '(') {
                  return false;
              } elseif ($str[$i] === ']' && $lastElement !== '[') {
